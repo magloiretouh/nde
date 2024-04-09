@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 0 0 calc(33% - 20px);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card {
+                flex: 0 0 calc(100% - 20px);
+            }
+        }
+
+        /* Modern animation styles */
+        .card.active {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="ndl.jpg" alt="Olam Agri EN">
+            <div class="card-content">
+                <h2 style="color: #ff6501;">Olam Agri EN</h2>
+                <!-- <p>This is the English version of Olam Agri.</p> -->
+                <a href="nde_en.pdf">Click here</a>
+            </div>
+        </div>
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="ndl.jpg" alt="Olam Agri FR">
+            <div class="card-content">
+                <h2 style="color: #ff6501;">Olam Agri FR</h2>
+                <!-- <p>Ceci est la version française d'Olam Agri.</p> -->
+                <a href="nde_fr.pdf">Cliquez ici</a>
+            </div>
+        </div>
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="ndl.jpg" alt="Olam Agri">
+            <div class="card-content">
+                <h2 style="color: #ff6501;">Olam Agri</h2>
+                <!-- <p>This is Olam Agri.</p> -->
+                <a href="nde.pdf">Click here</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo(card) {
+            card.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
